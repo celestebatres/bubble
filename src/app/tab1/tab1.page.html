@@ -3,29 +3,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" tab="tab2">
-
-  <!-- <ion-list>
-    <ion-item *ngFor="let pokemon of pokemons" >
-      <ion-label>{{pokemon.name}}</ion-label>
-    </ion-item>
-  </ion-list> -->
-
   <ion-card *ngFor="let pokemon of pokemons">
-    <ion-button click="sendInfo()" routerLink="/pokemon]">OPEN</ion-button> <!-- ['/pokemon' + {{pokemon.name}}]-->
+    <ion-button click="sendInfo(pokemon)" [routerLink]="['pokemon', pokemon.name]">OPEN</ion-button>
     <ion-card-header>
       <ion-card-title>{{pokemon.name}}</ion-card-title>
       <ion-card-subtitle><a href="{{pokemon.url}}">{{pokemon.url}}</a></ion-card-subtitle>
     </ion-card-header>
-  
     <ion-card-content>
-      <ion-avatar slot="start">
-        <img src="{{img}}">
-      </ion-avatar>
-      Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
-    
-    <ion-buttons>
-      <ion-back-button color="MiUprimary" text="" defaultHref="tabs/tab1/pokemon" >GET INFO</ion-back-button>
-    </ion-buttons>
   </ion-card>
 </ion-content>

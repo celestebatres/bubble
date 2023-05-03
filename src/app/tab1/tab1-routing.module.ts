@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { Tab1Page } from './tab1.page';
+
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./pokemon/pokemon.module').then( m => m.PokemonPageModule)
   },
   {
-    path: 'pokemon/:id',
+    path: 'pokemon/:name',
     loadChildren: () => import('./pokemon/pokemon.module').then( m => m.PokemonPageModule)
   }
 ];

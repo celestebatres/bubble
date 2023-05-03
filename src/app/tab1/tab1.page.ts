@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class Tab1Page implements OnInit {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient, private router: Router
   ) {  }
   public pokemons: any = [];
   public name: any="";
@@ -34,17 +34,12 @@ export class Tab1Page implements OnInit {
     });
   }
 
-  // public changePokemon(){
-  //   this.pokemons.forEach((pokemon: { name: any; }) => {
-  //     this.name = pokemon.name;
-  //     this.http.get<any>('https://pokeapi.co/api/v2/pokemon/'+this.name).subscribe(data => {
-  //       this.img= data.sprites.front_default;
-  //       console.log(this.img);
-  //     });
-  //   });
-  // }
+  public navigateFromCode(){
+    const name = 'bulbasaur'
+    this.router.navigateByUrl(`pokemon/${name}`);
+  }
 
-  public sendInfo(name: string){
+  public sendInfo(pokemon: any){
 
   }
 
